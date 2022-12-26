@@ -1,22 +1,14 @@
-apiVersion: kustomize.config.k8s.io/v1beta1
+apiVersion: kustomize.toolkit.fluxcd.io/v1beta1
 kind: Kustomization
-resources:
-- ../../../base/
-
-namespace: platform
-patchesStrategicMerge:
-  - |-
-    apiVersion: kustomize.toolkit.fluxcd.io/v1beta1
-    kind: Kustomization
-    metadata:
-      name: fleet-tenant-sync
-    spec:
-      path: ./tenants/kla/acc
-      targetNamespace: acc
-  - |-
-    apiVersion: kustomize.toolkit.fluxcd.io/v1beta1
-    kind: Kustomization
-    metadata:
-      name: fleet-tenant-commons-sync
-    spec:
-      targetNamespace: acc
+metadata:
+  name: fleet-platform-commons-sync-kla-acc
+spec:
+  interval: 5m0s
+  path: ./commons/
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: platform-repo
+    namespace: flux-system
+  validation: client
+  targetNamespace: acc
