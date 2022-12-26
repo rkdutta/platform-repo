@@ -2,7 +2,7 @@
 apiVersion: source.toolkit.fluxcd.io/v1beta2
 kind: GitRepository
 metadata:
-  name: app-git-repository
+  name: app-repo
 spec:
   interval: 1m0s
   ref:
@@ -14,7 +14,7 @@ spec:
 apiVersion: source.toolkit.fluxcd.io/v1beta2
 kind: GitRepository
 metadata:
-  name: tenant-git-repository
+  name: tenant-repo
 spec:
   interval: 1m0s
   ref:
