@@ -10,7 +10,7 @@ spec:
   serviceAccountName: flux-reconciler
   sourceRef:
     kind: GitRepository
-    name: tenant-git-repository
+    name: tenant-repo
   validation: client
   targetNamespace: placeholder
   dependsOn:
