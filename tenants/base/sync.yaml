@@ -7,7 +7,7 @@ spec:
   interval: 5m0s
   path: ./tenants/kla/placeholder
   prune: true
-  serviceAccountName: flux-reconciler
+  serviceAccountName: platform-flux-reconciler
   sourceRef:
     kind: GitRepository
     name: tenant-repo

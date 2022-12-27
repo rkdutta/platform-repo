@@ -6,6 +6,7 @@ spec:
   interval: 5m0s
   path: ./commons/
   prune: true
+  serviceAccountName: platform-flux-reconciler
   sourceRef:
     kind: GitRepository
     name: flux-system
